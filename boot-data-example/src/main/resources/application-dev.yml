@@ -1,0 +1,40 @@
+logging:
+  level:
+    com.qf.goods: debug
+    com.qf.goods.mapper: debug
+  config:
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: "jdbc:mysql://localhost:3306/work15"
+      username: "root"
+      password: "root"
+      max-active: 8
+      filters: "stat,wall,slf4j"
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "/druid/*"
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: root
+        login-password: root
+
+
+
+mybatis-plus:
+  mapper-locations: "classpath*: mapper/**/*.xml"
+  type-aliases-package: com.qf.manage.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+
+

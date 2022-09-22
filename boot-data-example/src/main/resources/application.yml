@@ -1,0 +1,11 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: boot-data-example
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: "dev"
+
+
